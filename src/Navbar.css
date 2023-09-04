@@ -1,0 +1,113 @@
+h1{
+  font-family: monospace;
+  font-style: oblique;
+  font-stretch: semi-expanded;
+  font-weight: bolder;
+}
+h1::first-letter{
+  color:rebeccapurple ;
+  font-family: cursive;
+  font-size: 3rem;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: salmon;
+  height: 10vh;
+padding: 1rem;
+
+}
+
+/* Logo styles */
+.logo {
+  font-size: 20px;
+  color: #fff;
+}
+
+/* List styles */
+.list {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+
+/* List item styles */
+.items {
+  margin-right: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Button styles */
+.btn {
+  display: none;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Style the hamburger icon lines */
+.btn div {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: transform 0.3s;
+}
+
+/* Active state for hamburger icon */
+.btn.active div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.btn.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.btn.active div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile styles */
+/* Navbar.css */
+/* ... (previous styles) */
+
+@media screen and (max-width: 576px) {
+  .list {
+    flex-direction: column;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position: absolute;
+    top: 50px; /* Adjust this value as needed to control the vertical position of the menu */
+    left: 0px;
+    right: 0px;
+   
+    background: salmon;
+    padding-top: 2rem;
+    padding-bottom:1rem ; /* Adjust padding as needed */
+   /* Add shadow for a dropdown effect */
+    display: ${(toggleMenu || screenWidth > 576) ? 'flex' : 'none'}; /* Hide by default and show on button click */
+  }
+
+  .items {
+    padding-top:1rem; 
+  }
+  .btn {
+    display: block;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .navbar {
+width: auto;
+  }
+}
+
